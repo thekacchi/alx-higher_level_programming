@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
 def raise_exception():
-    print ("a" + 3)
+    print("a" + 3)
