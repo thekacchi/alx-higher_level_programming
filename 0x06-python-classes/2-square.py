@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This module raises errors when the value passed to size is 
-nt a positive integer"""
+"""This module raises errors when the value passed to size is
+not a positive integer"""
 
 
 class Square:
