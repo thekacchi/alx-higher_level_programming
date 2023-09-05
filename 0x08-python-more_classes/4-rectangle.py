@@ -54,6 +54,10 @@ class Rectangle:
                 rectangle += "\n"
         return rectangle
 
+    def __repr__(self):
+        _width = self._Rectangle__width
+        _height = self._Rectangle__height
+        return f"Rectangle({_width}, {_height})"
 
     def area(self):
         return self._Rectangle__width * self._Rectangle__height
