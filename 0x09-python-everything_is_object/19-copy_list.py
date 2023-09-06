@@ -6,6 +6,7 @@
 
 
 def copy_list(lis):
+    """list copies to another list """
     new_l = [item for item in lis]
 
     return new_l
