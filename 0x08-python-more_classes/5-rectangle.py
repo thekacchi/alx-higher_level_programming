@@ -66,4 +66,4 @@ class Rectangle:
         return (self._Rectangle__width * 2) + (self._Rectangle__height * 2)
 
     def __del__(self):
-        print("Bye  rectangle...")
+        print("Bye rectangle...")
