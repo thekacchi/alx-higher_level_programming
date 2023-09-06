@@ -5,7 +5,7 @@
 """ copy_list copies thelist"""
 
 
-def copy_list(l=[]):
-    new_l = [item for item in l]
+def copy_list(lis):
+    new_l = [item for item in lis]
 
     return new_l
