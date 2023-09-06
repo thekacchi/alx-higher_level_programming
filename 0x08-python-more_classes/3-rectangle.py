@@ -54,7 +54,6 @@ class Rectangle:
                 rectangle += "\n"
         return rectangle
 
-
     def area(self):
         return self._Rectangle__width * self._Rectangle__height
 
