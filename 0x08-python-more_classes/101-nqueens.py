@@ -2,14 +2,13 @@
 
 import sys
 
+
 def is_safe(board, row, col, n):
     """check if queen cn be placed in board[r][c]"""
     """check the left side of the row"""
     for i in range(col):
         if board[row][i] == 1:
             return False
-
-
     """check upper diagonal on the left side"""
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
         if board[i][j] == 1:
@@ -21,6 +20,7 @@ def is_safe(board, row, col, n):
             return False
 
     return True
+
 
 def solve_nqueens(n):
     if n < 4:
@@ -53,6 +53,7 @@ def solve_nqueens(n):
 
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
