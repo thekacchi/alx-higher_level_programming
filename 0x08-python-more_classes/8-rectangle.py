@@ -24,6 +24,21 @@ class Rectangle:
         self._Rectangle__height = height
         Rectangle.number_of_instances += 1
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
+
+        if area_1 >= area_2:
+            return rect_1
+        else:
+            return rect_2
+
     @property
     def width(self):
         return self._Rectangle__width
@@ -67,20 +82,10 @@ class Rectangle:
         return self._Rectangle__width * self._Rectangle__height
 
     def perimeter(self):
+        if self._Rectangle__width == 0 or self._Rectangle__height == 0:
+            return 0
         return (self._Rectangle__width * 2) + (self._Rectangle__height * 2)
 
     def __del__(self):
-        print("Bye  rectangle...")
+        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-
-    @staticmethod
-    def bigger_or_equal(my_rectangle_1, my_rectangle__2):
-        if isinstance(my_rectangle_1, Rectangle) is False:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(my_rectangle_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if my_rectangle_1.area() >= my_rectangle_2.area():
-            return my_rectangle_1
-        else:
-            return my_rectangle_2
