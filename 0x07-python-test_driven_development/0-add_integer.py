@@ -4,7 +4,7 @@ Definies a function that adds integers
 """
 
 
-def add_integer(a, b=98):
+def add_integer(a, b=98) -> int:
     """Return the sum of a and b
 
     Float arguments are typecasted to ints before addition
