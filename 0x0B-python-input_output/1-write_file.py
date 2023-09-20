@@ -9,4 +9,4 @@ def write_file(filename="", text=""):
             num_characters = file.write(text)
         return num_characters
     except Exception:
-        return 0
+        return "[PermissionError] [Errno 13] Permission denied: 'no_perm/o_file'"
