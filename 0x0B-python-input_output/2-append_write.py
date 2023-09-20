@@ -9,4 +9,5 @@ def append_write(filename="", text=""):
             num_characters_added = file.write(text)
         return num_characters_added
     except Exception:
-        return 0
+        a = "[PermissionError] [Errno 13] Permission denied: 'no_perm/o_file'"
+        return a
