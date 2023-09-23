@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines the base"""
 import json
+import csv
 
 
 class Base:
@@ -71,6 +72,46 @@ class Base:
                 instance_list = [cls.create(**d) for d in dict_list]
         except FileNotFoundError:
             """Return enpty list of file doesn't exist"""
+            pass
+
+        return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects to CSV file"""
+        filename = "{}.csv".format(cls.__name__)
+
+        with open(filename, mode="w", newline="") as file:
+            writer = csv.writer(file)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a list of objects from a csv file"""
+        filename = "{}.csv".format(cls.__name__)
+        instance_list = []
+
+        try:
+            with open(filename, mode="r") as file:
+                reader = csv.reader(file)
+                if cls.__name__ == "Rectangle":
+                    for row in reader:
+                        instance = cls(int(row[1]), int(row[2]),
+                                       int(row[3]), int(row[4]), int(row[0]))
+                        instance_list.append(instance)
+                elif cls.__name__ == "Square":
+                    for row in reader:
+                        instance = cls(int(row[1]), int(row[2]),
+                                       int(row[3]), int(row[0]))
+                        instance_list.append(instance)
+        except FileNotFoundError:
+            """file doesn't exist, retutn rmpty list"""
             pass
 
         return instance_list
