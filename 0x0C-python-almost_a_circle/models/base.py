@@ -57,3 +57,20 @@ class Base:
         dummy_instance.update(**dictionary)
         """apply values"""
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Load a list of instances from JDON file"""
+        filename = "{}.json".format(cls.__name__)
+        instance_list = []
+
+        try:
+            with open(filename, mode="r") as file:
+                json_string = file.read()
+                dict_list = json.loads(json_string)
+                instance_list = [cls.create(**d) for d in dict_list]
+        except FileNotFoundError:
+            """Return enpty list of file doesn't exist"""
+            pass
+
+        return instance_list
