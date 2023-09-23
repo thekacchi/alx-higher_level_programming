@@ -53,7 +53,7 @@ class Base:
             dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
             """create dummy Square instance"""
-            dummyinstance = cls(1)
+            dummy_instance = cls(1)
         dummy_instance.update(**dictionary)
         """apply values"""
         return dummy_instance
