@@ -67,7 +67,7 @@ class Base:
         try:
             with open(filename, mode="r") as file:
                 json_string = file.read()
-                dict_list = json.loads(json_string)
+                dict_list = Base.from_json_string(json_string)
                 instance_list = [cls.create(**d) for d in dict_list]
         except FileNotFoundError:
             """Return enpty list of file doesn't exist"""
