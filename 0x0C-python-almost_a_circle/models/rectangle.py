@@ -86,7 +86,7 @@ class Rectangle(Base):
         return area
 
     def display(self):
-        """Display the rectangle with # characters"""
+        """iUpdate Display the rectangle with # characters"""
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
@@ -96,3 +96,21 @@ class Rectangle(Base):
         """Returns string representation of the rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """Update attributes of the rectangle.
+
+        Args:
+            *args: list of arguments
+                   order: id, width, height, x, y.
+            *kwargs: dictionary of arguments
+                   with attributes names and value.
+
+        """
+        if args:
+            arg_names = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, arg_names[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
