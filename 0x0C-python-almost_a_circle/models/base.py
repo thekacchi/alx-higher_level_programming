@@ -44,3 +44,16 @@ class Base:
             obj_list = [obj.to_dictionary() for obj in list_objs]
             json_string = cls.to_json_string(obj_list)
             file.write(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Create an instance with attributes set, based on a doctionary)"""
+        if cls.__name__ == "Rectangle":
+            """create dummy Rectangle instance"""
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            """create dummy Square instance"""
+            dummyinstance = cls(1)
+        dummy_instance.update(**dictionary)
+        """apply values"""
+        return dummy_instance
