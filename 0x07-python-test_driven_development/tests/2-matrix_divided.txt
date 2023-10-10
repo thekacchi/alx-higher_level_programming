@@ -1,1 +1,102 @@
-Matrix
+The ''2-matrix_divided'' module
+===============================
+
+Using ''matrix_divided''
+------------------------
+
+Importing the function
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Check that module and function has docstring
+	>>> len(__import__('2-matrix_divided').__doc__) > 1
+	True
+	>>> len(__import__('2-matrix_dovided').matrix_divided.__doc__) > 1
+	True
+
+Check that matrix is a MATRIX
+	Integers
+	>>> matrix_divided(4, 8)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	Empty list
+	>>> matrix_divided([], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	No list in the list
+	>>> matrix_divided([2], 7)
+	Traceback (most recent call last):
+	...
+	TypeSrror: matrix must be a matrix (list of lists) id integers/floats
+
+	Boolean
+	>>> matrix_divided([[65], True], 3)
+	Traceback (most recent call last):
+	…
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking correct output case
+	>>> matrix = [[2, 4, 6], [8, 10, 12]]
+	>>> divmat = matrix_divided(matrix, 2)
+	>>> divmat
+	[[1,2,3],[4,5,6]]
+
+Checking that div is string
+	>>> matrix = [[1, 2, 3], [9, 8, 7]]
+	>>> divmat = matrix_divided(matrix, "5")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+Checking that div is zero
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+Checking not a list of lists of integers
+	>>> matrix_divided([[2, True, 3], [3, "6", 2]], 2)
+	Traceback (most recent call last):
+	…
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking list of integers but not rectangular
+	>>> matrix_divided([[1, 2, 3], [4, 5]], 2)
+	Traceback (most recent call last):
+	…
+	TypeError: matrix must have each row with the same size
+
+Checking that div is infinity float
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Checking that div is nan
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
+
+Checking matrix with one float(inf)
+	>>> matrix_divided([[float('inf'), 4, 6], [8, 10, 12]], 2)
+	[[inf, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Checking matrix with one float(inf), div inf
+	>>> matrix_divided([[float('inf'), 4, 6], [8, 10, 12]],     float('inf'))
+	[[nan, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Checking matrix with one float(inf), div nan
+	>>> matrix_divided([[float('inf'), 4, 6], [8, 10, 12]],     float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
+
+Checking matrix with one float(nan)
+	>>> matrix_divided([[float('nan'), 4, 6], [8, 10, 12]], 2])
+	[[nan, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Checking matrix with one float(nan), div inf
+	>>> matrix_divided([[float('nan'), 4, 6], [8, 10, 12]], float('inf'))
+	[[nan, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Checking matrix with one float(nan), div nan
+	>>> matrix_divided([[float('nan'), 4, 6], [8, 10, 12]], float('nan'))
+	[[nan, nan, nan], [nan, nan, nan]]
