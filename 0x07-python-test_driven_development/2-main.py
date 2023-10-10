@@ -3,9 +3,9 @@
 matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 matrix = [
-    [22, 4, 6],
-    [8, 10, 12]
+    [3, 9],
+    [12, 15, 3]
 ]
-div = float('inf') 
+div = 3 
 print(matrix_divided(matrix, div))
 print(matrix)
