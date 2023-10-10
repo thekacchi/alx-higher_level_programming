@@ -1,1 +1,48 @@
-Add integer
+The ''0-add_integer'' module
+============================
+
+Using ''add_integer''
+---------------------
+
+Importing function from the module
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Checking if module is documented
+	>>> len(__import__('0-add_integer').__doc__) > 1
+	True
+
+Checking that function is documented
+	>>> len(__import__('0-add_integer').add_integer.__doc__) > 1
+	True
+
+Checking that arguments are either int or float
+	>>> add_integer(True, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(3, True)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+Checking accurate result
+	>>> add_integer(2, 3)
+	5
+	>>> add_integer(1.2, 2.6)
+	3
+
+Check large input
+	>>> add_integer(9999999999999999, 1)
+	10000000000000000
+
+Check non supported float value
+	>>> add_integer(4, float('nan'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(4, float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
