@@ -16,6 +16,11 @@ def matrix_divided(matrix, div) -> list:
     Returns
          list of the dividends
     """
+    index = len(matrix[0])
+    for mat in matrix:
+        if len(mat) != index:
+            raise TypeError("matrix must have each row with the same size")
+
     if type(matrix) is not list or len(matrix) == 0:
         raise TypeError("matrix must be a matrix \
 (list of lists) of integers/floats")
