@@ -32,6 +32,12 @@ Checking accurate result
 	>>> add_integer(1.2, 2.6)
 	3
 
+Checking only one argument
+	>>> add_integer(2)
+	100
+	>>> add_integer(-4)
+	94
+
 Check large input
 	>>> add_integer(9999999999999999, 1)
 	10000000000000000
