@@ -34,13 +34,13 @@ def matrix_divided(matrix, div) -> list:
 (list of lists) of integers/floats")
 
         if r > 0 and len(matrix[r]) != len(matrix[r-1]):
-            raise TypeError("Each row of the matrix must have the same size")
+            raise TypeError("matrix must have each row with the same size")
 
         new_matrix.append([])
         for n in matrix[r]:
             if type(n) not in [float, int]:
                 raise TypeError("matrix must be a matrix \
-(list of lists) of integers/gloats")
+(list of lists) of integers/floats")
 
             new_matrix[r].append(round(n/div, 2))
     return new_matrix
