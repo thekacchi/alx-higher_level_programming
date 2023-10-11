@@ -1,4 +1,4 @@
-#!/usr/bin/python 3
+#!/usr/bin/python3
 """The say my name module creates a function"""
 
 def say_my_name(first_name, last_name=""):
