@@ -51,6 +51,18 @@ Checking that div is string
 	...
 	TypeError: div must be a number
 
+Checking for one missing argument
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Checking for two missing argument
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
 Checking that div is zero
 	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
 	Traceback (most recent call last):

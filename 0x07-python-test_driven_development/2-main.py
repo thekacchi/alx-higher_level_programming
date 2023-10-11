@@ -7,5 +7,5 @@ matrix = [
     [12, 15, 3]
 ]
 div = 3 
-print(matrix_divided(matrix, div))
+print(matrix_divided())
 print(matrix)
