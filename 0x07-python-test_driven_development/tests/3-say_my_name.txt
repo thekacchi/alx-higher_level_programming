@@ -25,7 +25,7 @@ Check ''first_name'' and ''last_name'' are strings
 
 Check correct result
 	>>> say_my_name('Onyedikachi', 'Eze')
-	Onyedikachi Eze
+	My name is Onyedikachi Eze
 	>>> #The output should have a trailing white space when ''last_name'' is not passed
 	>>> say_my_name('Peter')
-	Peter
+	My name is Peter 
