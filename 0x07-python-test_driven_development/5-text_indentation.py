@@ -13,6 +13,7 @@ def text_indentation(text: str):
 
     for c in text:
         if c == '.' or c == '?' or c == '!':
+            print(c, end="")
             print('\n\n', end="")
             continue
         print(c, end="")
