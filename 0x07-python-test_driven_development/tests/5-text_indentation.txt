@@ -22,10 +22,10 @@ Check if text is a string
 Check for correect output
 	>>> text_indentation("")
 	>>> text_indentation("hello!")
-	hello
+	hello!
 	<BLANKLINE>
 	>>> text_indentation("Hey!, I love you")
-	Hey
+	Hey!
 	<BLANKLINE>
 	, I love you
 
