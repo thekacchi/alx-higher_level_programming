@@ -17,7 +17,7 @@ def text_indentation(text: str):
     for c in text:
         result.append(c)
         if c in special_chars:
-            if c != " "
+            if c != " ":
                 result.append('\n\n')
 
     print("".join(result))
