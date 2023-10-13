@@ -15,5 +15,5 @@ def text_indentation(text: str):
         if c == '.' or c == '?' or c == '!' or c == ":":
             print(c, end="")
             print('\n\n', end="")
-            continue
-        print(c, end="")
+        else
+            print(c, end="")
