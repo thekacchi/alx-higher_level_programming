@@ -1,5 +1,5 @@
 -- Create the database if it doesn't exist
-CREATE DATABAE IF NOT EXISTS hbtn_0d_2;
+CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
 
 -- Create 'user_0d_1' if it doesn't exist
 CREATE USER IF NOT EXISTS
