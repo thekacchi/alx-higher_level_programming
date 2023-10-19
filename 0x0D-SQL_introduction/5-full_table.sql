@@ -1,6 +1,2 @@
--- Prints the full description of the first_table from the database
-CREATE TABLE IF NOT EXISTS first_table (
-	id int DEFAULT NULL,
-	name varchar(256) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_0900_ai_ci
+-- prints the full description of the table first_table from the database hbtn_0c_0
+SHOW CREATE TABLE first_table;
