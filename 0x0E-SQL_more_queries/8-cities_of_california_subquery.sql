@@ -1,6 +1,4 @@
--- Use the hbtn.. database
-USE hbtn_0d_usa;
-
+-- Cities in Californai
 SELECT id, name
 FROM cities
 WHERE state_id IN
