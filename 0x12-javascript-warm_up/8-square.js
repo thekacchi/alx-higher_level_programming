@@ -4,7 +4,7 @@ const sizearg = process.argv[2];
 const size = parseInt(sizearg, 10);
 
 if (isNaN(size)) {
-  console.log('Missing Size');
+  console.log('Missing size');
 } else {
   let counter = 0;
   while (counter < size) {
