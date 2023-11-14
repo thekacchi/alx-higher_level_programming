@@ -6,7 +6,7 @@ const Rectangle = class {
       this.width = w;
       this.height = h;
     } else {
-      return new Object();
+      return Object.create(Rectangle.prototype);
     }
   }
 };
