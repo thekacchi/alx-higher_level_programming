@@ -2,9 +2,7 @@
 
 const { dict } = require('./101-data');
 
-
-function invertOccurrencesDict(inputDict)
-{
+function invertOccurrencesDict (inputDict) {
   const resultDict = {};
 
   for (const userId in inputDict) {
