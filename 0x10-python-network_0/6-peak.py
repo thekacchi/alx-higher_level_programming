@@ -6,7 +6,7 @@ def find_peak(list_of_integers):
     """ Finds the peak in a list of ints"""
     if not list_of_integers:
         return None
-    
+
     low, high = 0, len(list_of_integers) - 1
 
     while low < high:
@@ -15,5 +15,4 @@ def find_peak(list_of_integers):
             high = mid
         else:
             low = mid + 1
-
     return list_of_integers[low]
