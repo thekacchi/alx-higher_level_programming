@@ -2,6 +2,7 @@
 """This module defines the base"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -115,3 +116,40 @@ class Base:
             pass
 
         return instance_list
+
+    @staticmethod
+    def draw(list_rectangles, list_square):
+        """initialize the turtle screen"""
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+        screen.title("Shapes Drawing")
+
+        """create a turtle object"""
+        pen = turtle.Turtle()
+        pen.speed(1)
+
+        """Draw rectangles"""
+        for rectangle in list_rectangles:
+            pen.penup()
+            pen.setpos(rectangle.x, rectangle.y)
+            pen.pendown()
+            pen.forward(rectangle.width)
+            pen.left(90)
+            pen.forward(rectangle.height)
+            pen.left(90)
+            pen.forward(rectangle.width)
+            pen.left(90)
+            pen.forward(rectangle.height)
+            pen.left(90)
+
+        """Draw squares"""
+        for square in list_squares:
+            pen.penup()
+            pen.setpos(square.x, square.y)
+            pen.pendown()
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.left(90)
+
+        """Close turtle graphics window on click"""
+        screen.exitonclick()
