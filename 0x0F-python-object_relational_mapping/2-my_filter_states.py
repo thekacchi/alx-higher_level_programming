@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""slect some specificz"""
 import MySQLdb
 import sys
 
