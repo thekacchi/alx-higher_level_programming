@@ -1,19 +1,17 @@
 #!/usr/bin/python3
-"""slect some specificz"""
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
     # Check if all required arguments are provided
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <state_name>".format(
-              sys.argv[0]))
+        print("Usage: {} <username> <password> <database> <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
-    # Get MySQL connection parameters and state name from command line args
+    # Get MySQL connection parameters and state name from command line arguments
     username, password, database, state_name = (
         sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
-        )
+    )
 
     # Connect to MySQL server
     db = MySQLdb.connect(
@@ -27,9 +25,8 @@ if __name__ == "__main__":
     # Create a cursor object to interact with the database
     cursor = db.cursor()
 
-    # Execute the query to fetch and display states with the specified name
-    query = (
-        "SELECT * FROM states "
+    # Execute the case-sensitive query to fetch and display states with the specified name
+    query = ("SELECT * FROM states "
         "WHERE BINARY name = '{}' "
         "ORDER BY id ASC;"
     ).format(state_name)
