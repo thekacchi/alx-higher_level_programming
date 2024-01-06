@@ -32,6 +32,8 @@ def filter_cities(username, password, database, state_name):
 
         if cities[0]:
             print(cities[0])
+        else:
+            print()
 
     except MySQLdb.Error as e:
         print("MySQL Error: {}".format(e))
