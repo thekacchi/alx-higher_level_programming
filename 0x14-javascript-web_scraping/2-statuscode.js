@@ -13,5 +13,5 @@ axios.get(url)
     console.log('code:', response.status);
   })
   .catch(error => {
-    console.error(error.message);
+    console.error('code:', error.response.status);
   });
