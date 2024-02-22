@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Fetch web response of url
-"""
+"""Fetch web response of url"""
 
 import urllib.request
 
 if __name__ == "__main__":
+    """documentstion here"
     with urllib.request.urlopen(
         'https://alx-intranet.hbtn.io/status'
     )
